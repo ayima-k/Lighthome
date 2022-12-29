@@ -27,7 +27,10 @@ const Header = () => {
 
   return (
     <div className='navbar'>
-      <h1 onClick={() => navigate('/')}>LIGHTHOME.KG</h1>
+      <h1 onClick={() => {
+        navigate('/')
+        setActive('main')
+      }}>LIGHTHOME.KG</h1>
       <ul>
         <li ref={barsRef} className='bars' onClick={() => setToggle(prev => !prev)}><AiOutlineBars/></li>
         <ul className={toggle ? 'ul active' : 'ul'}>
