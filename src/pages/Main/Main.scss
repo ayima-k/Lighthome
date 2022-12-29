@@ -1,0 +1,88 @@
+.main{
+  background: url('https://d2uo8shwmgd69l.cloudfront.net/assets/building/header-0ecd503ac5e1e774445da290955fc9eada8b6e2d4761e6b5122711b9d9b1e8b3.jpg') center / cover ;
+  color: rgba(255, 255, 255, 0.908);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-attachment: fixed;
+  flex-direction: column;
+  margin: 0;
+  h2{
+    padding-top: 50px;
+    font-size: 40px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    @media (max-width: 340px) {
+      font-size: 30px;
+    }
+  }
+  span{
+    font-size: 30px;
+    color: #fff;
+    width: 70%;
+    text-align: center;
+    .dark_blue{
+      color: gold;
+    }
+    .light_blue{
+      color: yellow;
+    }
+  }
+  .block{
+    margin-top: 7rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 95%;
+    gap: 20px;
+    @media (max-width: 954px) {
+      justify-content: space-around;
+      margin-top: 3rem;
+    }
+    @media (max-width: 528px) {
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      gap: 50px;
+      width: 97%;
+      justify-content: start;
+    }
+    .card{
+      border: 1px solid white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 250px;
+      height: 130px;
+      transition: .3s;
+      @media (max-width: 640px) {
+        width: 200px;
+      }
+      @media (max-width: 532px) {
+        width: 170px;
+      }
+      @media (max-width: 528px) {
+        padding: 7% 50px;
+      }
+      span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg{
+          font-size: 40px;
+        }
+        @media (max-width: 528px) {
+          width: 300px;
+        }
+      }
+      p{
+        font-size: 23px;
+      }
+      &:hover{
+        box-shadow: 0 0 15px gold;
+      }
+    }
+  }
+}
