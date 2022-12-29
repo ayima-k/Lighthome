@@ -6,12 +6,27 @@ import './Header.scss'
 const Header = () => {
   const [active, setActive] = React.useState('main')
   const [toggle, setToggle] = React.useState(false)
+  const barsRef = React.useRef(null)
+
+  
+  React.useEffect(() => {
+    const handleClickOutside = (e) => {
+      const withinBoundaries = e.composedPath().includes(barsRef.current);
+      if (barsRef.current && !withinBoundaries) {
+        setToggle(false)
+      }
+    }
+
+    document.body.addEventListener('click', handleClickOutside)
+
+    return () => document.body.removeEventListener('click', handleClickOutside)
+  }, [])
 
   return (
     <div className='navbar'>
       <h1>LIGHTHOME.KG</h1>
       <ul>
-        <li className='bars' onClick={() => setToggle(prev => !prev)}><AiOutlineBars/></li>
+        <li ref={barsRef} className='bars' onClick={() => setToggle(prev => !prev)}><AiOutlineBars/></li>
         <ul className={toggle ? 'ul active' : 'ul'}>
           <li
             className={active === 'main' ? 'li active' : 'li'}

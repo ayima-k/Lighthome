@@ -44,6 +44,9 @@
         display: none;
         top: 100%;
         width: 100%;
+        li{
+          border: 1px solid gray;
+        }
         &.active{
           top: 15%;
           left: -5%;
